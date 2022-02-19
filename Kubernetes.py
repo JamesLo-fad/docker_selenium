@@ -4,11 +4,9 @@ from textwrap import dedent
 
 # The DAG object; we'll need this to instantiate a DAG
 from airflow import DAG
-from airflow.providers.cncf.kubernetes.operators.kubernetes_pod import (
-    KubernetesPodOperator,
-)
-# Operators; we need this to operate!
+from airflow.providers.cncf.kubernetes.operators.kubernetes_pod import KubernetesPodOperator
 from airflow.operators.bash import BashOperator
+
 # These args will get passed on to each operator
 # You can override them on a per-task basis during operator initialization
 default_args = {
